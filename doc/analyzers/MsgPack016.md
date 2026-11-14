@@ -38,7 +38,7 @@ If you intend to keep using the derived attributes type, suppress the warning by
  public class A
 ```
 
-Alternatively, enable propery AOT formatter source generation by switching to the standard `KeyAttribute`:
+Alternatively, enable proper AOT formatter source generation by switching to the standard `KeyAttribute`:
 
 ```cs
 [MessagePackObject]
