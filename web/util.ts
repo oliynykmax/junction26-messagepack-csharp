@@ -1,4 +1,3 @@
-export function check(x: number) {
-  if (Number.isNaN(x)) return false;
-  return x;
+export function check(x: number): boolean {
+  return !Number.isNaN(x);
 }
