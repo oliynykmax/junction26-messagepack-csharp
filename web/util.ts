@@ -1,5 +1,4 @@
 export function check(x: number) {
-  if (x == NaN) return false;
-  debugger;
+  if (Number.isNaN(x)) return false;
   return x;
 }
