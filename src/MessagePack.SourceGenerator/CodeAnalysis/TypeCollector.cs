@@ -1015,13 +1015,12 @@ public class TypeCollector
                         {
                             this.reportDiagnostic?.Invoke(Diagnostic.Create(MsgPack00xMessagePackAnalyzer.KeysMustBeUnique, item.DeclaringSyntaxReferences.FirstOrDefault()?.GetSyntax().GetLocation()));
                         }
-
-                        var member = new MemberSerializationInfo(true, isWritable, isReadable, isInitOnly, item.IsRequired, intKey!.Value, item.Name, item.Name, item.Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat), item.Type.ToDisplayString(BinaryWriteFormat), specialFormatter)
+                        else
                         {
-                            DeclaringType = GetDeclaringTypeIfColliding(item),
-                        };
-                        if (!intMembers.ContainsKey(member.IntKey))
-                        {
+                            var member = new MemberSerializationInfo(true, isWritable, isReadable, isInitOnly, item.IsRequired, intKey!.Value, item.Name, item.Name, item.Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat), item.Type.ToDisplayString(BinaryWriteFormat), specialFormatter)
+                            {
+                                DeclaringType = GetDeclaringTypeIfColliding(item),
+                            };
                             intMembers.Add(member.IntKey, (member, item.Type));
                         }
                     }
@@ -1031,13 +1030,12 @@ public class TypeCollector
                         {
                             this.reportDiagnostic?.Invoke(Diagnostic.Create(MsgPack00xMessagePackAnalyzer.KeysMustBeUnique, item.DeclaringSyntaxReferences.FirstOrDefault()?.GetSyntax().GetLocation()));
                         }
-
-                        var member = new MemberSerializationInfo(true, isWritable, isReadable, isInitOnly, item.IsRequired, hiddenIntKey++, stringKey!, item.Name, item.Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat), item.Type.ToDisplayString(BinaryWriteFormat), specialFormatter)
+                        else
                         {
-                            DeclaringType = GetDeclaringTypeIfColliding(item),
-                        };
-                        if (!stringMembers.ContainsKey(member.StringKey))
-                        {
+                            var member = new MemberSerializationInfo(true, isWritable, isReadable, isInitOnly, item.IsRequired, hiddenIntKey++, stringKey!, item.Name, item.Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat), item.Type.ToDisplayString(BinaryWriteFormat), specialFormatter)
+                            {
+                                DeclaringType = GetDeclaringTypeIfColliding(item),
+                            };
                             stringMembers.Add(member.StringKey, (member, item.Type));
                         }
                     }
@@ -1155,13 +1153,12 @@ public class TypeCollector
                         {
                             this.reportDiagnostic?.Invoke(Diagnostic.Create(MsgPack00xMessagePackAnalyzer.KeysMustBeUnique, item.DeclaringSyntaxReferences.FirstOrDefault()?.GetSyntax().GetLocation()));
                         }
-
-                        var member = new MemberSerializationInfo(true, IsWritable: !item.IsReadOnly, IsReadable: true, IsInitOnly: false, item.IsRequired, intKey!.Value, item.Name, item.Name, item.Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat), item.Type.ToDisplayString(BinaryWriteFormat), specialFormatter)
+                        else
                         {
-                            DeclaringType = GetDeclaringTypeIfColliding(item),
-                        };
-                        if (!intMembers.ContainsKey(member.IntKey))
-                        {
+                            var member = new MemberSerializationInfo(true, IsWritable: !item.IsReadOnly, IsReadable: true, IsInitOnly: false, item.IsRequired, intKey!.Value, item.Name, item.Name, item.Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat), item.Type.ToDisplayString(BinaryWriteFormat), specialFormatter)
+                            {
+                                DeclaringType = GetDeclaringTypeIfColliding(item),
+                            };
                             intMembers.Add(member.IntKey, (member, item.Type));
                         }
                     }
@@ -1171,13 +1168,12 @@ public class TypeCollector
                         {
                             this.reportDiagnostic?.Invoke(Diagnostic.Create(MsgPack00xMessagePackAnalyzer.KeysMustBeUnique, item.DeclaringSyntaxReferences.FirstOrDefault()?.GetSyntax().GetLocation()));
                         }
-
-                        var member = new MemberSerializationInfo(true, IsWritable: !item.IsReadOnly, IsReadable: true, IsInitOnly: false, item.IsRequired, hiddenIntKey++, stringKey!, item.Name, item.Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat), item.Type.ToDisplayString(BinaryWriteFormat), specialFormatter)
+                        else
                         {
-                            DeclaringType = GetDeclaringTypeIfColliding(item),
-                        };
-                        if (!stringMembers.ContainsKey(member.StringKey))
-                        {
+                            var member = new MemberSerializationInfo(true, IsWritable: !item.IsReadOnly, IsReadable: true, IsInitOnly: false, item.IsRequired, hiddenIntKey++, stringKey!, item.Name, item.Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat), item.Type.ToDisplayString(BinaryWriteFormat), specialFormatter)
+                            {
+                                DeclaringType = GetDeclaringTypeIfColliding(item),
+                            };
                             stringMembers.Add(member.StringKey, (member, item.Type));
                         }
                     }
